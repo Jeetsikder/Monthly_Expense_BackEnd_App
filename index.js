@@ -13,6 +13,7 @@ connectToMongo();
 // * Require files
 const user = require("./app/Routes/User");
 const Expense = require("./app/Routes/Expenses");
+const ProfileUpdate = require("./app/Routes/ProfileUpdate");
 const {
   LoggedINnUserToken_Exist,
   LoggedINnUserToken_Verify,
@@ -46,6 +47,9 @@ app.use("/user", user);
 
 // * Add Monthly Expenses
 app.use("/auth/expenses", Expense);
+
+// * Update profile
+app.use("/auth/profile/update", ProfileUpdate);
 
 app.listen(PORT, () => {
   console.log(`Back-End listen on ${PORT}`);

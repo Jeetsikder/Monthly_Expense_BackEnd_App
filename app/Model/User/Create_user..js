@@ -16,6 +16,20 @@ const userSchema = new Schema({
     type: String,
     require: true,
   },
+  currency: {
+    name: {
+      type: String,
+      default: "Indian Rupee (INR)",
+    },
+    symbol: {
+      type: String,
+      default: "&#8377;",
+    },
+    code: {
+      type: String,
+      default: "INR",
+    },
+  },
   date: {
     type: Date,
     default: Date.now,

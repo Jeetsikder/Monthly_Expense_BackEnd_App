@@ -8,8 +8,8 @@ async function getUserPersonalInfo(req, res, next) {
     const userId = req.userId;
     const getUSerInfo = await userModel.findById({ _id: userId });
     // # Assign properties from getUSerInfo to userInfo object
-    const { name, email } = getUSerInfo;
-    req.userInfo = { name, email };
+    const { name, email, currency } = getUSerInfo;
+    req.userInfo = { name, email, currency };
     return next();
   } catch (error) {
     console.error(error); // Log the error for debugging purposes
